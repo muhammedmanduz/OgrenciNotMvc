@@ -1,0 +1,70 @@
+﻿@model OgrenciNotMvcWeb.Models.EntityFramework.TBLOGRENCILER
+
+@{
+    ViewBag.Title = "YeniOgrenci";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>YeniOgrenci</h2>
+
+<div>
+
+
+    <form class="form-group" method="post">
+        <div>
+            <label>Öğrenci Adı</label>
+            <input type="text" name="OGRAD" class="form-control" />
+        </div>
+        <div style="margin-top:10px">
+            <label>Öğrenci Soyadı</label>
+            <input type="text" name="OGRSOYAD" class="form-control" />
+        </div>
+        <div style="margin-top:10px">
+            <label>Öğrenci Fotograf</label>
+            <input type="text" name="OGRFOTO" class="form-control" />
+        </div>
+
+        <div style="margin-top:10px">
+            <label>Öğrenci Cinsiyet</label>
+            <input type="text" name="OGRCINSIYET" class="form-control" />
+        </div>
+        <div style="margin-top:10px">
+            <label>Öğrenci Kulüp</label>
+            @Html.DropDownListFor(m => m.TBLKULUPLER.KULUPID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+        </div>
+
+        <div style="margin-top:10px">
+            <button class="btn btn-primary">Öğrenci Ekle </button>
+        </div>
+
+    </form>
+</div>
+
+
+
+
+
+
+
+
+@*<div style="margin-top:10px">
+        <label>Şehir Seçimi</label>
+        @Html.DropDownList("Şehirler",
+       new[]
+       {
+           new SelectListItem(){Value="1",Text="Ankara"},
+           new SelectListItem(){Value="2",Text="Bursa"},
+           new SelectListItem(){Value="3",Text="İstanbul"},
+           new SelectListItem(){Value="4",Text="İzmir"}
+       }, "Şehir Seçiniz...", new { @class = "form-control" })
+
+    </div>
+
+    <div style="margin-top:10px">
+
+        @using (Html.BeginForm("CategoryChosen", "Home", FormMethod.Get))
+        {
+
+                @Html.DropDownList("DersAd",null,"Ders Seçin",new {@class="form-control"})
+        }
+    </div>*@

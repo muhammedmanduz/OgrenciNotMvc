@@ -1,0 +1,21 @@
+﻿@model OgrenciNotMvcWeb.Models.EntityFramework.TBLKULUPLER
+@{
+    ViewBag.Title = "KulupGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kulup Getir Sayfası</h2>
+
+@using (Html.BeginForm("Guncelle", "Kulupler", FormMethod.Post))
+            {
+                <div class="form-grup">
+                    @Html.LabelFor(m=>m.KULUPAD)
+                    @Html.TextBoxFor(m=>m.KULUPAD, new { @class = "form-control" })
+                    
+                </div>
+                @Html.HiddenFor(m=>m.KULUPID)
+                <div style="margin-top:15px">
+                    <button class="btn btn-info">Güncelle </button>
+                </div>
+    
+             }
